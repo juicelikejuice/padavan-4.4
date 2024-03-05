@@ -24,7 +24,7 @@ build_extract:
 build_Xray:
 	( cd $(THISDIR)/$(Xray_dir); \
 	if [ $(GOPROXY_ON) = "y" ]; then \
-	sed -i 's/go 1.22/go 1.22.0/g' go.mod \
+	sed -i 's/go 1.22/go 1.22.0/g' ../go.mod \
 	go env -w GOPROXY=https://goproxy.cn,direct ; \
 	fi ; \
 	GOOS=linux GOARCH=mipsle go build -ldflags "-w -s" -o $(THISDIR)/bin/xray; \
