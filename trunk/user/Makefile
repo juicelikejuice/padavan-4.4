@@ -117,7 +117,9 @@ dir_y						+= inadyn
 dir_y						+= miniupnpd
 dir_y						+= dnsmasq
 dir_y						+= igmpproxy
+ifneq ($(CONFIG_FIRMWARE_INCLUDE_MSD_LITE),y)
 dir_y						+= udpxy
+endif
 dir_y						+= utils
 dir_y						+= lanauth
 dir_y						+= 802.1x
@@ -168,6 +170,7 @@ dir_$(SAMBA_ENABLED)				+= samba36
 dir_$(SAMBA_ENABLED)				+= wsdd2
 dir_$(CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS)	+= chnroute
 dir_$(CONFIG_FIRMWARE_INCLUDE_TTYD)		+= ttyd
+dir_$(CONFIG_FIRMWARE_INCLUDE_MSD_LITE)		+= msd_lite
 dir_$(FRP_ENABLE)				+= frp
 dir_$(SOFTETHERVPN_ENABLE)			+= softethervpn
 dir_$(CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT)         += scutclient
